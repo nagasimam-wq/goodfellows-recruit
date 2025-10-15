@@ -1,12 +1,16 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { Calendar, Clock, Users as UsersIcon, TrendingUp, Briefcase } from 'lucide-react'
 
-function CountUp({ end, duration = 2000, suffix = '', decimals = 0 }: { end: number; duration?: number; suffix?: string; decimals?: number }) {
-  const [count, setCount] = useState(0)
+function AnimatedNumber({ end, duration = 2000, suffix = '', decimals = 0 }: { end: number; duration?: number; suffix?: string; decimals?: number }) {
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (latest) =>
+    decimals > 0 ? latest.toFixed(decimals) : Math.floor(latest).toLocaleString()
+  )
+  const [displayValue, setDisplayValue] = useState('0')
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLSpanElement>(null)
 
@@ -30,30 +34,124 @@ function CountUp({ end, duration = 2000, suffix = '', decimals = 0 }: { end: num
   useEffect(() => {
     if (!isVisible) return
 
-    const startTime = Date.now()
-    const endTime = startTime + duration
+    const controls = animate(count, end, {
+      duration: duration / 1000,
+      ease: "easeOut",
+    })
 
-    const timer = setInterval(() => {
-      const now = Date.now()
-      const remaining = endTime - now
-      const percentage = Math.max(0, 1 - remaining / duration)
+    return controls.stop
+  }, [count, end, duration, isVisible])
 
-      if (remaining <= 0) {
-        setCount(end)
-        clearInterval(timer)
-      } else {
-        setCount(end * percentage)
-      }
-    }, 16)
-
-    return () => clearInterval(timer)
-  }, [end, duration, isVisible])
+  useEffect(() => {
+    const unsubscribe = rounded.on('change', (latest) => {
+      setDisplayValue(latest)
+    })
+    return unsubscribe
+  }, [rounded])
 
   return (
     <span ref={ref}>
-      {decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toLocaleString()}
+      {displayValue}
       {suffix}
     </span>
+  )
+}
+
+// AnimatedPieChart wrapper
+function AnimatedPieChart({ data, innerRadius, outerRadius, dataKey, label, children }: any) {
+  const [isVisible, setIsVisible] = useState(false)
+  const [animationKey, setAnimationKey] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true)
+          setAnimationKey(prev => prev + 1)
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [isVisible])
+
+  return (
+    <div ref={ref}>
+      <ResponsiveContainer width="100%" height={350}>
+        <PieChart key={animationKey}>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={innerRadius}
+            outerRadius={outerRadius}
+            paddingAngle={2}
+            dataKey={dataKey}
+            label={label}
+            labelLine={{ stroke: '#999', strokeWidth: 1 }}
+            startAngle={0}
+            endAngle={360}
+            isAnimationActive={true}
+            animationBegin={0}
+            animationDuration={2000}
+            animationEasing="ease-in-out"
+          >
+            {children}
+          </Pie>
+          <Tooltip formatter={(value: number) => dataKey === 'value' && data[0].name.includes('%') ? `${value}%` : `${value}名`} />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+// AnimatedBarChart wrapper
+function AnimatedBarChart({ data, layout, dataKey, fill, children, height = 350 }: any) {
+  const [isVisible, setIsVisible] = useState(false)
+  const [animationKey, setAnimationKey] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true)
+          setAnimationKey(prev => prev + 1)
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [isVisible])
+
+  return (
+    <div ref={ref}>
+      <ResponsiveContainer width="100%" height={height}>
+        <BarChart data={data} layout={layout} key={animationKey}>
+          {children}
+          <Bar
+            dataKey={dataKey}
+            fill={fill}
+            isAnimationActive={true}
+            animationBegin={0}
+            animationDuration={2000}
+            animationEasing="ease-in-out"
+            radius={layout === 'vertical' ? [0, 8, 8, 0] : [8, 8, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   )
 }
 
@@ -145,7 +243,7 @@ export function NumbersSection() {
                 <Calendar className="w-12 h-12 text-primary-500 mb-3" />
                 <div className="text-sm text-gray-600 mb-1">創業年数</div>
                 <div className="text-4xl font-bold text-primary-500">
-                  <CountUp end={16} />
+                  <AnimatedNumber end={16} />
                   <span className="text-2xl">年</span>
                 </div>
               </motion.div>
@@ -160,7 +258,7 @@ export function NumbersSection() {
                 <UsersIcon className="w-12 h-12 text-accent-yellow mb-3" />
                 <div className="text-sm text-gray-600 mb-1">従業員数</div>
                 <div className="text-4xl font-bold text-accent-yellow">
-                  <CountUp end={37} />
+                  <AnimatedNumber end={37} />
                   <span className="text-2xl">人</span>
                 </div>
               </motion.div>
@@ -175,7 +273,7 @@ export function NumbersSection() {
                 <TrendingUp className="w-12 h-12 text-accent-blue mb-3" />
                 <div className="text-sm text-gray-600 mb-1">平均勤続年数</div>
                 <div className="text-4xl font-bold text-accent-blue">
-                  <CountUp end={6} />
+                  <AnimatedNumber end={6} />
                   <span className="text-2xl">年</span>
                 </div>
               </motion.div>
@@ -208,26 +306,17 @@ export function NumbersSection() {
                 className="bg-gray-50 p-8 rounded-2xl shadow-lg"
               >
                 <h4 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2">部署構成</h4>
-                <ResponsiveContainer width="100%" height={350}>
-                  <PieChart>
-                    <Pie
-                      data={departmentData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={60}
-                      outerRadius={120}
-                      paddingAngle={2}
-                      dataKey="value"
-                      label={({ name, value }) => `${name} ${value}%`}
-                      labelLine={{ stroke: '#999', strokeWidth: 1 }}
-                    >
-                      {departmentData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.fill} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                  </PieChart>
-                </ResponsiveContainer>
+                <AnimatedPieChart
+                  data={departmentData}
+                  innerRadius={60}
+                  outerRadius={120}
+                  dataKey="value"
+                  label={({ name, value }: any) => `${name} ${value}%`}
+                >
+                  {departmentData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                  ))}
+                </AnimatedPieChart>
               </motion.div>
 
               {/* 雇用形態 */}
@@ -238,23 +327,16 @@ export function NumbersSection() {
                 className="bg-gray-50 p-8 rounded-2xl shadow-lg"
               >
                 <h4 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2">雇用形態の内訳</h4>
-                <ResponsiveContainer width="100%" height={350}>
-                  <PieChart>
-                    <Pie
-                      data={employmentData}
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={120}
-                      dataKey="value"
-                      label={({ name, value }) => `${name} ${value}名`}
-                    >
-                      {employmentData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.fill} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(value: number) => `${value}名`} />
-                  </PieChart>
-                </ResponsiveContainer>
+                <AnimatedPieChart
+                  data={employmentData}
+                  outerRadius={120}
+                  dataKey="value"
+                  label={({ name, value }: any) => `${name} ${value}名`}
+                >
+                  {employmentData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                  ))}
+                </AnimatedPieChart>
               </motion.div>
             </div>
           </div>
@@ -282,7 +364,7 @@ export function NumbersSection() {
                 <Clock className="w-16 h-16 text-accent-blue mx-auto mb-4" />
                 <div className="text-sm text-gray-600 mb-2">平均残業時間</div>
                 <div className="text-5xl font-bold text-accent-blue mb-2">
-                  <CountUp end={10} />
+                  <AnimatedNumber end={10} />
                 </div>
                 <div className="text-gray-600">時間／月</div>
               </motion.div>
@@ -297,7 +379,7 @@ export function NumbersSection() {
                 <Calendar className="w-16 h-16 text-accent-green mx-auto mb-4" />
                 <div className="text-sm text-gray-600 mb-2">有給休暇取得率</div>
                 <div className="text-5xl font-bold text-accent-green mb-2">
-                  <CountUp end={85} />
+                  <AnimatedNumber end={85} />
                   <span className="text-3xl">%</span>
                 </div>
               </motion.div>
@@ -351,15 +433,17 @@ export function NumbersSection() {
               <h4 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2">
                 入社の決め手はなんでしたか？
               </h4>
-              <ResponsiveContainer width="100%" height={350}>
-                <BarChart data={motivationData} layout="vertical">
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis type="number" unit="%" />
-                  <YAxis dataKey="name" type="category" width={150} />
-                  <Tooltip formatter={(value: number) => `${value}%`} />
-                  <Bar dataKey="value" fill="#FF8C00" radius={[0, 8, 8, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
+              <AnimatedBarChart
+                data={motivationData}
+                layout="vertical"
+                dataKey="value"
+                fill="#FF8C00"
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" unit="%" />
+                <YAxis dataKey="name" type="category" width={150} />
+                <Tooltip formatter={(value: number) => `${value}%`} />
+              </AnimatedBarChart>
             </motion.div>
 
             {/* 共感度アンケート */}
@@ -373,15 +457,17 @@ export function NumbersSection() {
                 <h4 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2">
                   経営方針やビジョンへの共感度
                 </h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={empathyData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="score" label={{ value: 'スコア', position: 'insideBottom', offset: -5 }} />
-                    <YAxis unit="%" />
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                    <Bar dataKey="value" fill="#3DADE8" radius={[8, 8, 0, 0]} />
-                  </BarChart>
-                </ResponsiveContainer>
+                <AnimatedBarChart
+                  data={empathyData}
+                  dataKey="value"
+                  fill="#3DADE8"
+                  height={300}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="score" label={{ value: 'スコア', position: 'insideBottom', offset: -5 }} />
+                  <YAxis unit="%" />
+                  <Tooltip formatter={(value: number) => `${value}%`} />
+                </AnimatedBarChart>
               </motion.div>
 
               <motion.div
@@ -393,15 +479,17 @@ export function NumbersSection() {
                 <h4 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2">
                   どの点に共感できますか？
                 </h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={empathyPointsData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} />
-                    <YAxis unit="%" />
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                    <Bar dataKey="value" fill="#3DD9A7" radius={[8, 8, 0, 0]} />
-                  </BarChart>
-                </ResponsiveContainer>
+                <AnimatedBarChart
+                  data={empathyPointsData}
+                  dataKey="value"
+                  fill="#3DD9A7"
+                  height={300}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} />
+                  <YAxis unit="%" />
+                  <Tooltip formatter={(value: number) => `${value}%`} />
+                </AnimatedBarChart>
               </motion.div>
             </div>
           </div>

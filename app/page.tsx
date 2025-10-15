@@ -4,6 +4,7 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { MessageSection } from '@/components/sections/MessageSection'
 import { CEOMessageSection } from '@/components/sections/CEOMessageSection'
 import { VisionSection } from '@/components/sections/VisionSection'
+import { ImageCarouselSection } from '@/components/sections/ImageCarouselSection'
 import { BusinessSection } from '@/components/sections/BusinessSection'
 import { NumbersSection } from '@/components/sections/NumbersSection'
 import { CultureSection } from '@/components/sections/CultureSection'
@@ -21,6 +22,7 @@ export default function Home() {
       <MessageSection />
       <CEOMessageSection />
       <VisionSection />
+      <ImageCarouselSection />
       <BusinessSection />
       <NumbersSection />
       <CultureSection />

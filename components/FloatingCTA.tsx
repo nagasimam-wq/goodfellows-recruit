@@ -15,7 +15,7 @@ export function FloatingCTA() {
         href="#recruit"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="flex items-center gap-2 bg-[#FF8C00] text-white px-6 py-4 rounded-full shadow-lg hover:bg-[#E67E00] transition-colors font-medium"
+        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A5F] to-[#E63946] text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all font-medium"
       >
         <Mail size={20} />
         <span className="hidden sm:inline">エントリー</span>
