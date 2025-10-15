@@ -30,7 +30,7 @@ export function ImageCarouselSection() {
           <div className="w-24 h-1 bg-[#FF8C00] mx-auto"></div>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative mb-16">
           {/* 無限スクロールコンテナ */}
           <div className="overflow-hidden">
             <motion.div
@@ -83,6 +83,37 @@ export function ImageCarouselSection() {
             </motion.div>
           </div>
         </div>
+
+        {/* 職場環境の説明 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <h3 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-[#FF8C00] pl-4">
+              職場環境
+            </h3>
+
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                当社はニューノーマル時代の働き方に順応し、2020年11月にオフィスの規模を縮小・移転しました。新オフィスは企業理念の体現をコンセプトとし、理念への共感・共鳴が広がる空間をプロデュースしました。
+              </p>
+
+              <p>
+                壁面には、企業理念・ミッション・ビジョン・バリューをデザイン。再生ダンボールをリサイクルし手作りされた照明や、廃棄物をリサイクルして作られたサイドテーブルのほか、FSC森林認証材や自然素材を使用した家具を採用し、環境負荷を可能な限り少なくしています。
+              </p>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-600">
+                  ※執務室内には、ウォーターサーバー・自動販売機・オフィスグリコ等を完備しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -3,6 +3,8 @@ import { FloatingCTA } from '@/components/FloatingCTA'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { MessageSection } from '@/components/sections/MessageSection'
 import { CEOMessageSection } from '@/components/sections/CEOMessageSection'
+import { PitchDeckSection } from '@/components/sections/PitchDeckSection'
+import { JobCategoriesSection } from '@/components/sections/JobCategoriesSection'
 import { VisionSection } from '@/components/sections/VisionSection'
 import { ImageCarouselSection } from '@/components/sections/ImageCarouselSection'
 import { BusinessSection } from '@/components/sections/BusinessSection'
@@ -21,14 +23,17 @@ export default function Home() {
       <HeroSection />
       <MessageSection />
       <CEOMessageSection />
+      <PitchDeckSection />
+      <JobCategoriesSection />
       <VisionSection />
-      <ImageCarouselSection />
       <BusinessSection />
+      <ImageCarouselSection />
       <NumbersSection />
       <CultureSection />
       <GrowthSection />
       <PeopleSection />
       <RequirementsSection />
+      <JobCategoriesSection />
       <RecruitSection />
       <Footer />
       <FloatingCTA />

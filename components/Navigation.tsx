@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const navItems = [
   { href: '#vision', label: '理念・ビジョン' },
@@ -36,11 +37,15 @@ export function Navigation() {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#top" className={cn(
-            "text-2xl font-bold transition-colors",
-            isScrolled ? "text-[#FF8C00]" : "text-gray-900"
-          )}>
-            グッドフェローズ
+          <a href="#top" className="flex items-center">
+            <Image
+              src="https://www.goodfellows.co.jp/img/common/header-logo.svg"
+              alt="グッドフェローズ"
+              width={180}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </a>
 
           {/* デスクトップナビ */}
