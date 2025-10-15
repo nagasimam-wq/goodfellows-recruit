@@ -36,7 +36,10 @@ export function Navigation() {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#top" className="text-2xl font-bold text-primary-600">
+          <a href="#top" className={cn(
+            "text-2xl font-bold transition-colors",
+            isScrolled ? "text-[#FF8C00]" : "text-gray-900"
+          )}>
             グッドフェローズ
           </a>
 
@@ -46,7 +49,12 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium hover:text-primary-600 transition-colors"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  isScrolled
+                    ? "text-gray-700 hover:text-[#FF8C00]"
+                    : "text-gray-900 hover:text-[#FF8C00]"
+                )}
               >
                 {item.label}
               </a>
@@ -70,7 +78,7 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="block py-2 text-sm font-medium hover:text-primary-600 transition-colors"
+                className="block py-2 text-sm font-medium text-gray-700 hover:text-[#FF8C00] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

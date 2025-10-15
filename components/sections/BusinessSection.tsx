@@ -8,25 +8,25 @@ const businesses = [
     icon: Sun,
     title: '太陽光発電比較サイト',
     description: '「タイナビ」シリーズを運営し、太陽光発電・蓄電池・電力会社の比較サービスを提供。累計利用者数は業界トップクラスを誇ります。',
-    color: 'from-yellow-400 to-orange-500'
+    color: 'from-accent-yellow to-accent-orange'
   },
   {
     icon: Zap,
     title: 'エネルギーマネジメント',
     description: '企業向けエネルギーマネジメントシステムの開発・提供を通じて、効率的なエネルギー利用をサポートしています。',
-    color: 'from-blue-400 to-cyan-500'
+    color: 'from-accent-blue to-cyan-500'
   },
   {
     icon: Building2,
     title: '不動産・リフォーム',
     description: '住宅リフォームや不動産関連の比較サービスを展開。お客様の最適な選択をサポートします。',
-    color: 'from-green-400 to-emerald-500'
+    color: 'from-accent-green to-emerald-500'
   },
   {
     icon: TrendingUp,
     title: 'M&A・新規事業',
     description: '再エネ関連企業のM&Aや新規事業開発を通じて、業界全体の成長に貢献しています。',
-    color: 'from-purple-400 to-pink-500'
+    color: 'from-accent-red to-pink-500'
   },
 ]
 

@@ -36,7 +36,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-            <p className="mb-2 font-semibold text-primary-400">No Re-new, No Future</p>
+            <p className="mb-2 font-semibold text-[#FF8C00]">No Re-new, No Future</p>
             <p>&copy; {new Date().getFullYear()} Goodfellows Inc. All rights reserved.</p>
           </div>
         </div>

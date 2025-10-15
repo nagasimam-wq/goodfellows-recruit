@@ -8,31 +8,31 @@ const requirements = [
     icon: Heart,
     title: 'ミッション共感',
     description: '再エネ100%の未来というビジョンに共感し、社会課題の解決に情熱を持てる方',
-    color: 'from-red-400 to-pink-500',
+    color: 'from-[#FF5A5F] to-[#FF7A3D]',
   },
   {
     icon: TrendingUp,
     title: '成長意欲',
     description: '常に学び続け、自己成長を楽しめる方。失敗を恐れず挑戦できる方',
-    color: 'from-green-400 to-emerald-500',
+    color: 'from-[#3DD9A7] to-[#3DADE8]',
   },
   {
     icon: Zap,
     title: '主体性',
     description: '自ら考え、行動できる方。能動的に課題を見つけ、解決に導ける方',
-    color: 'from-yellow-400 to-orange-500',
+    color: 'from-[#FFB900] to-[#FF8C00]',
   },
   {
     icon: MessageCircle,
     title: 'コミュニケーション力',
     description: 'チームで協力し、円滑なコミュニケーションを取れる方',
-    color: 'from-blue-400 to-cyan-500',
+    color: 'from-[#3DADE8] to-[#3DD9A7]',
   },
   {
     icon: Users,
     title: 'チャレンジ精神',
     description: '新しいことに挑戦し、変革を楽しめる戦友として共に歩める方',
-    color: 'from-purple-400 to-pink-500',
+    color: 'from-[#FF7A3D] to-[#FF5A5F]',
   },
 ]
 

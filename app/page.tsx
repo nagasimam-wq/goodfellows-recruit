@@ -1,6 +1,7 @@
 import { Navigation } from '@/components/Navigation'
 import { FloatingCTA } from '@/components/FloatingCTA'
 import { HeroSection } from '@/components/sections/HeroSection'
+import { MessageSection } from '@/components/sections/MessageSection'
 import { CEOMessageSection } from '@/components/sections/CEOMessageSection'
 import { VisionSection } from '@/components/sections/VisionSection'
 import { BusinessSection } from '@/components/sections/BusinessSection'
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <MessageSection />
       <CEOMessageSection />
       <VisionSection />
       <BusinessSection />
