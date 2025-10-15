@@ -56,7 +56,7 @@ export function ImageCarouselSection() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 36, // 36秒で1周（6枚×6秒）
+                  duration: 28, // 28秒で1周（少し早く）
                   ease: "easeInOut",
                   times: [0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.50, 0.58, 0.67, 0.75, 0.83, 0.92, 1],
                 },

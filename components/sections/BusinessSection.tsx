@@ -164,9 +164,6 @@ export function BusinessSection() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className={`absolute top-4 left-4 p-3 rounded-xl bg-gradient-to-br ${business.color}`}>
-                    <business.icon className="text-white" size={28} />
-                  </div>
                 </div>
 
                 <div className="p-6">
