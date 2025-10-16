@@ -205,7 +205,7 @@ const empathyPointsData = [
 
 export function NumbersSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 section-light section-divider">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

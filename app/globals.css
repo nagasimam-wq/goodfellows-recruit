@@ -19,3 +19,33 @@
     text-wrap: balance;
   }
 }
+
+/* セクション区切り */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #FF8C00, transparent);
+  opacity: 0.3;
+}
+
+/* 交互背景パターン */
+.section-white {
+  background: white;
+}
+
+.section-light {
+  background: linear-gradient(to bottom, #fff9f0, #ffffff);
+}
+
+.section-orange-light {
+  background: linear-gradient(to bottom, #fffaf5, #fff9f0);
+}

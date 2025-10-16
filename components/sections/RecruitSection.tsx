@@ -56,14 +56,14 @@ export function RecruitSection() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex-1"
                   >
-                    <div className="bg-white p-6 rounded-xl shadow-lg">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <div className="bg-white p-4 rounded-xl shadow-lg h-28 flex flex-col justify-between">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
                           {item.step}
                         </div>
-                        <h4 className="font-bold text-lg">{item.title}</h4>
+                        <h4 className="font-bold text-base leading-tight">{item.title}</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
+                      <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                   {index < newGradFlow.length - 1 && (
@@ -92,14 +92,14 @@ export function RecruitSection() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex-1"
                   >
-                    <div className="bg-white p-6 rounded-xl shadow-lg">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <div className="bg-white p-4 rounded-xl shadow-lg h-28 flex flex-col justify-between">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
                           {item.step}
                         </div>
-                        <h4 className="font-bold text-lg">{item.title}</h4>
+                        <h4 className="font-bold text-base leading-tight">{item.title}</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
+                      <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                   {index < careerFlow.length - 1 && (

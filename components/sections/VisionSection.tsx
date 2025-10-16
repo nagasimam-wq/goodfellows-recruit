@@ -5,7 +5,7 @@ import { Target, Eye, Heart } from 'lucide-react'
 
 export function VisionSection() {
   return (
-    <section id="vision" className="py-20 bg-gradient-to-b from-white to-orange-50">
+    <section id="vision" className="py-20 section-light section-divider">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

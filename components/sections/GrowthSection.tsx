@@ -25,7 +25,7 @@ const careerPath = [
 
 export function GrowthSection() {
   return (
-    <section id="growth" className="py-20 bg-white">
+    <section id="growth" className="py-20 section-orange-light section-divider">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

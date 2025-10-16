@@ -8,13 +8,13 @@ const requirements = [
     icon: Heart,
     title: 'ミッション共感',
     description: '再エネ100%の未来というビジョンに共感し、社会課題の解決に情熱を持てる方',
-    color: 'from-[#FF5A5F] to-[#FF7A3D]',
+    color: 'from-[#FFB900] to-[#FF8C00]',
   },
   {
     icon: TrendingUp,
     title: '成長意欲',
     description: '常に学び続け、自己成長を楽しめる方。失敗を恐れず挑戦できる方',
-    color: 'from-[#3DD9A7] to-[#3DADE8]',
+    color: 'from-[#FFB900] to-[#FF8C00]',
   },
   {
     icon: Zap,
@@ -26,19 +26,19 @@ const requirements = [
     icon: MessageCircle,
     title: 'コミュニケーション力',
     description: 'チームで協力し、円滑なコミュニケーションを取れる方',
-    color: 'from-[#3DADE8] to-[#3DD9A7]',
+    color: 'from-[#FFB900] to-[#FF8C00]',
   },
   {
     icon: Users,
     title: 'チャレンジ精神',
     description: '新しいことに挑戦し、変革を楽しめる戦友として共に歩める方',
-    color: 'from-[#FF7A3D] to-[#FF5A5F]',
+    color: 'from-[#FFB900] to-[#FF8C00]',
   },
 ]
 
 export function RequirementsSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 section-white section-divider">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

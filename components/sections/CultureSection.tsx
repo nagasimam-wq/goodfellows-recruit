@@ -14,7 +14,7 @@ const benefits = [
 
 export function CultureSection() {
   return (
-    <section id="culture" className="py-20 bg-white">
+    <section id="culture" className="py-20 section-white section-divider">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
