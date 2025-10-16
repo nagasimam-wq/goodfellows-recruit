@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import { Gift, BookOpen, Heart, Calendar, Clock, Home } from 'lucide-react'
 
 const benefits = [
-  { icon: Gift, title: 'バースデー休暇', description: '誕生月に特別休暇を付与', color: '#FFB900' },
-  { icon: BookOpen, title: '書籍購入補助', description: '業務関連書籍の購入費用を会社が負担', color: '#3DADE8' },
-  { icon: Heart, title: '社会保険完備', description: '健康保険・厚生年金・雇用保険・労災保険', color: '#FF5A5F' },
-  { icon: Calendar, title: '育休制度', description: '育児休業制度で家庭と仕事の両立をサポート', color: '#3DD9A7' },
-  { icon: Clock, title: 'フレックス制度', description: '柔軟な勤務時間で効率的に働ける', color: '#FF7A3D' },
+  { icon: Gift, title: 'バースデー休暇', description: '誕生月に特別休暇を付与', color: '#FF8C00' },
+  { icon: BookOpen, title: '書籍購入補助', description: '業務関連書籍の購入費用を会社が負担', color: '#FF8C00' },
+  { icon: Heart, title: '社会保険完備', description: '健康保険・厚生年金・雇用保険・労災保険', color: '#FF8C00' },
+  { icon: Calendar, title: '育休制度', description: '育児休業制度で家庭と仕事の両立をサポート', color: '#FF8C00' },
+  { icon: Clock, title: 'フレックス制度', description: '柔軟な勤務時間で効率的に働ける', color: '#FF8C00' },
   { icon: Home, title: 'リモートワーク', description: '週2出社で自宅でも快適に業務', color: '#FF8C00' },
 ]
 

@@ -32,8 +32,8 @@ export function VisionSection() {
           >
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
               <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-accent-yellow/20 rounded-lg">
-                  <Target className="text-accent-yellow" size={32} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <Target className="text-primary-500" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">ミッション</h3>
@@ -56,8 +56,8 @@ export function VisionSection() {
           >
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
               <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-accent-blue/20 rounded-lg">
-                  <Eye className="text-accent-blue" size={32} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <Eye className="text-primary-500" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">ビジョン</h3>
@@ -79,8 +79,8 @@ export function VisionSection() {
           >
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-accent-red/20 rounded-lg">
-                  <Heart className="text-accent-red" size={32} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <Heart className="text-primary-500" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">バリュー</h3>
@@ -88,16 +88,16 @@ export function VisionSection() {
                 </div>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-yellow">
-                  <h4 className="font-bold text-lg mb-2 text-accent-yellow">挑戦</h4>
+                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
+                  <h4 className="font-bold text-lg mb-2 text-primary-500">挑戦</h4>
                   <p className="text-gray-700">既成概念にとらわれず、新しい価値を創造し続ける</p>
                 </div>
-                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-blue">
-                  <h4 className="font-bold text-lg mb-2 text-accent-blue">誠実</h4>
+                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
+                  <h4 className="font-bold text-lg mb-2 text-primary-500">誠実</h4>
                   <p className="text-gray-700">お客様、仲間、社会に対して誠実であり続ける</p>
                 </div>
                 <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
-                  <h4 className="font-bold text-lg mb-2 text-accent-green">成長</h4>
+                  <h4 className="font-bold text-lg mb-2 text-primary-500">成長</h4>
                   <p className="text-gray-700">個人とチームの成長を通じて、社会に貢献する</p>
                 </div>
               </div>
