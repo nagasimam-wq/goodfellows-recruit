@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function MessageSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#FF8C00]">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* 日本を代表するエネルギー企業になり、再エネ100%の実現に貢献する */}
@@ -15,12 +15,12 @@ export function MessageSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-[#FF8C00] mb-12 leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 leading-relaxed">
               日本を代表するエネルギー企業になり、<br />
               再エネ100%の実現に貢献する
             </h2>
 
-            <div className="space-y-6 text-left text-gray-800 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-left text-white text-base md:text-lg leading-relaxed">
               <p>
                 現在、世界的に気候変動が話題に上がる中、その影響で災害が多く発生しています。
               </p>
@@ -32,8 +32,8 @@ export function MessageSection() {
               </p>
             </div>
 
-            <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-              <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+            <div className="mt-12 p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30">
+              <p className="text-white text-base md:text-lg leading-relaxed font-semibold">
                 当社は、再生可能エネルギーのマーケットプレイスとして、日本を代表するエネルギー企業となり、日本国内の再生可能エネルギー普及100%実現に貢献することを目指しています。
               </p>
             </div>
@@ -47,11 +47,11 @@ export function MessageSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-[#FF8C00] mb-12 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center">
               Goodfellows＝戦友
             </h2>
 
-            <div className="space-y-6 text-left text-gray-800 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-left text-white text-base md:text-lg leading-relaxed">
               <p>
                 私たちは社員のことを戦友と呼んでいます。
               </p>
@@ -70,7 +70,7 @@ export function MessageSection() {
               <p className="mt-8">
                 私たちが掲げるVisionは、私たちだけでなく、日本、そして世界のためになると信じています。
               </p>
-              <p className="mt-8 text-xl font-bold text-[#FF8C00]">
+              <p className="mt-8 text-xl font-bold text-white drop-shadow-lg">
                 私たちと一緒に、グッドフェローズで戦いませんか？
               </p>
             </div>

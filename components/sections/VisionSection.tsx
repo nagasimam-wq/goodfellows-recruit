@@ -30,7 +30,41 @@ export function VisionSection() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg relative overflow-hidden">
+              {/* 枠線アニメーション */}
+              <motion.div
+                className="absolute top-0 right-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+                style={{ borderTop: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute right-0 top-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+                style={{ borderRight: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute bottom-0 left-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+                style={{ borderBottom: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute left-0 bottom-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+                style={{ borderLeft: '3px solid #FF8C00' }}
+              />
+
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 bg-primary-500/10 rounded-lg">
                   <Target className="text-primary-500" size={32} />
@@ -54,7 +88,41 @@ export function VisionSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-12"
           >
-            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg relative overflow-hidden">
+              {/* 枠線アニメーション */}
+              <motion.div
+                className="absolute top-0 right-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                style={{ borderTop: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute right-0 top-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                style={{ borderRight: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute bottom-0 left-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                style={{ borderBottom: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute left-0 bottom-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                style={{ borderLeft: '3px solid #FF8C00' }}
+              />
+
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 bg-primary-500/10 rounded-lg">
                   <Eye className="text-primary-500" size={32} />
@@ -77,7 +145,41 @@ export function VisionSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg relative overflow-hidden">
+              {/* 枠線アニメーション */}
+              <motion.div
+                className="absolute top-0 right-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                style={{ borderTop: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute right-0 top-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                style={{ borderRight: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute bottom-0 left-0 h-1"
+                initial={{ width: 0 }}
+                whileInView={{ width: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                style={{ borderBottom: '3px solid #FF8C00' }}
+              />
+              <motion.div
+                className="absolute left-0 bottom-0 w-1"
+                initial={{ height: 0 }}
+                whileInView={{ height: 'calc(100% - 20px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                style={{ borderLeft: '3px solid #FF8C00' }}
+              />
+
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-3 bg-primary-500/10 rounded-lg">
                   <Heart className="text-primary-500" size={32} />
@@ -88,15 +190,15 @@ export function VisionSection() {
                 </div>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
+                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-[#FF8C00]">
                   <h4 className="font-bold text-lg mb-2 text-primary-500">挑戦</h4>
                   <p className="text-gray-700">既成概念にとらわれず、新しい価値を創造し続ける</p>
                 </div>
-                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
+                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-[#FF8C00]">
                   <h4 className="font-bold text-lg mb-2 text-primary-500">誠実</h4>
                   <p className="text-gray-700">お客様、仲間、社会に対して誠実であり続ける</p>
                 </div>
-                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-accent-green">
+                <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-[#FF8C00]">
                   <h4 className="font-bold text-lg mb-2 text-primary-500">成長</h4>
                   <p className="text-gray-700">個人とチームの成長を通じて、社会に貢献する</p>
                 </div>

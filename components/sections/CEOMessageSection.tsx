@@ -37,83 +37,79 @@ export function CEOMessageSection() {
             <div className="w-32 h-1 bg-gradient-to-r from-[#FF8C00] to-[#FFB900] mx-auto"></div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-            <div className="flex flex-col md:flex-row">
-              {/* 左側：写真エリア */}
-              <div className="md:w-2/5 bg-gradient-to-br from-gray-50 to-orange-50/30 p-8 md:p-12 flex flex-col items-center justify-center relative overflow-hidden">
-                {/* 装飾的な背景要素 */}
-                <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#FF8C00] to-[#FFB900] opacity-5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-[#FFB900] to-[#FF8C00] opacity-5 rounded-full blur-3xl"></div>
+          {/* 1枚の大きな画像コンテナ */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full"
+            style={{ minHeight: '600px' }}
+          >
+            {/* 背景画像 */}
+            <div className="absolute inset-0 overflow-hidden">
+              <Image
+                src="/images/nagao.png"
+                alt="代表取締役社長 長尾 泰広"
+                fill
+                className="object-contain object-left"
+              />
+              {/* 右側をグラデーションで背景になじませる */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent from-50% via-white/90 via-55% to-white to-60%"></div>
+            </div>
 
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-full max-w-sm relative z-10"
-                >
-                  {/* 写真コンテナ */}
-                  <div className="relative mb-8">
-                    {/* 写真 */}
-                    <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl">
-                      <Image
-                        src="/images/nagao.png"
-                        alt="代表取締役社長 長尾 泰広"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  {/* 名前エリア */}
-                  <div className="text-center">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 }}
-                      className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#FF8C00] to-[#FFB900] rounded-full mb-3 shadow-md"
-                    >
-                      <p className="text-white text-sm font-bold">CEO</p>
-                    </motion.div>
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 }}
-                      className="text-gray-500 text-xs font-medium mb-2 uppercase tracking-wider"
-                    >
-                      Chief Executive Officer
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.6 }}
-                      className="text-gray-900 text-3xl md:text-4xl font-bold mb-1"
-                    >
-                      長尾 泰広
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.7 }}
-                      className="text-gray-500 text-sm font-light tracking-wide"
-                    >
-                      Yasuhiro Nagao
-                    </motion.p>
-                  </div>
-                </motion.div>
+            {/* コンテンツ */}
+            <div className="relative z-10 flex flex-col md:flex-row gap-12 md:gap-16 items-stretch min-h-[600px]">
+              {/* 左側：名前エリア */}
+              <div className="md:w-1/2 flex items-end pb-12 pl-6">
+                <div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                    className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#FF8C00] to-[#FFB900] rounded-full mb-3 shadow-md"
+                  >
+                    <p className="text-white text-sm font-bold">CEO</p>
+                  </motion.div>
+                  <motion.p
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    className="text-white text-xs font-medium mb-2 uppercase tracking-wider drop-shadow-lg"
+                  >
+                    Chief Executive Officer
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.7 }}
+                    className="text-white text-3xl md:text-4xl font-bold mb-1 drop-shadow-lg"
+                  >
+                    長尾 泰広
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 }}
+                    className="text-white text-sm font-light tracking-wide drop-shadow-lg"
+                  >
+                    Yasuhiro Nagao
+                  </motion.p>
+                </div>
               </div>
 
               {/* 右側：メッセージエリア */}
-              <div className="md:w-3/5 p-8 md:p-12 lg:p-16">
+              <div className="md:w-1/2 flex items-center pr-6 py-12">
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.3 }}
+                  className="w-full"
                 >
                   <Quote className="text-[#FF8C00] mb-6" size={48} />
 
@@ -144,7 +140,7 @@ export function CEOMessageSection() {
                 </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
