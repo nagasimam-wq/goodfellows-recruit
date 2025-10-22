@@ -25,8 +25,18 @@ const careerPath = [
 
 export function GrowthSection() {
   return (
-    <section id="growth" className="py-20 section-orange-light section-divider">
-      <div className="container mx-auto px-4">
+    <section id="growth" className="relative section-divider overflow-hidden">
+      {/* 固定背景画像（パララックス効果） */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(https://www.goodfellows.co.jp/wp-content/uploads/2020/10/company-img04-1.png)',
+        }}
+      />
+
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        {/* コンテンツ幅に合わせた黒オーバーレイ */}
+        <div className="absolute inset-0 bg-black/40 -z-10"></div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
