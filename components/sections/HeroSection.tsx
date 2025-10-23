@@ -55,14 +55,14 @@ export function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* パタパタ画像スライダー */}
-            <div className="relative h-[400px] md:h-[500px] bg-white rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] md:h-[600px] bg-white overflow-hidden shadow-2xl">
               {sliderImages.map((img, i) => (
                 <motion.div
                   key={i}
                   className="absolute inset-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: i === index ? 1 : 0 }}
-                  transition={{ duration: 1.5 }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
                 >
                   {/* 1枚の画像を横に4分割して表示し、パタパタと切り替わるアニメーション */}
                   {[0, 1, 2, 3].map((c) => (
@@ -80,13 +80,13 @@ export function HeroSection() {
                         rotateY: i === index ? 0 : -90,
                         opacity: i === index ? 1 : 0
                       }}
-                      transition={{ duration: 0.8, delay: c * 0.1 }}
+                      transition={{ duration: 1, delay: c * 0.1, ease: "easeInOut" }}
                     >
                       <div
                         className="w-full h-full"
                         style={{
                           backgroundImage: `url(${img})`,
-                          backgroundSize: '400% 100%',
+                          backgroundSize: '400% auto',
                           backgroundPosition: `${c * 33.33}% center`,
                         }}
                       />

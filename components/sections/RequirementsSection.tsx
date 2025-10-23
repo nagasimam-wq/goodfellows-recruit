@@ -38,8 +38,23 @@ const requirements = [
 
 export function RequirementsSection() {
   return (
-    <section className="py-20 section-white section-divider">
-      <div className="container mx-auto px-4">
+    <section className="relative section-divider overflow-hidden">
+      {/* 固定背景動画 */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/images/renewable-energy-bg.mp4" type="video/mp4" />
+        </video>
+        {/* 白オーバーレイ */}
+        <div className="absolute inset-0 bg-white/30"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,9 +62,9 @@ export function RequirementsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">求める人物像</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">求める人物像</h2>
           <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
             私たちは、こんな<span className="font-bold text-primary-600">戦友</span>を求めています
           </p>
         </motion.div>

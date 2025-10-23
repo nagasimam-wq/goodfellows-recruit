@@ -116,7 +116,7 @@ export function RecruitSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-primary-600 to-primary-800 text-white p-8 md:p-12 rounded-2xl shadow-2xl"
+            className="bg-gradient-to-br from-[#FF8C00] to-[#FFB900] text-white p-8 md:p-12 rounded-2xl shadow-2xl"
           >
             <h3 className="text-3xl font-bold mb-8 text-center">お問い合わせ</h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -149,7 +149,7 @@ export function RecruitSection() {
                 href="mailto:recruit@goodfellows.co.jp"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#FF8C00] rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <Mail size={20} />
                 今すぐエントリーする

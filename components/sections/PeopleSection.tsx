@@ -209,7 +209,7 @@ export function PeopleSection() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 onClick={() => setSelectedInterview(interview)}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all"
+                className="bg-white shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all"
               >
                 {/* 社員画像 */}
                 <div className="aspect-[4/3] relative bg-gray-200 overflow-hidden">

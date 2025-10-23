@@ -44,9 +44,9 @@ export function GrowthSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">成長機会とキャリアパス</h2>
-          <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">成長機会とキャリアパス</h2>
+          <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
+          <p className="text-xl text-white max-w-3xl mx-auto">
             個人の成長を全力でサポートし、キャリアアップの道筋を明確に描けます
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export function GrowthSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold mb-8 text-center">研修制度</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center text-white">研修制度</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {trainings.map((training, index) => (
                 <motion.div
@@ -84,7 +84,7 @@ export function GrowthSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold mb-8 text-center">自己啓発支援</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center text-white">自己啓発支援</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {supports.map((support, index) => (
                 <motion.div
@@ -114,7 +114,7 @@ export function GrowthSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold mb-8 text-center">キャリアパス例</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center text-white">キャリアパス例</h3>
             <div className="relative">
               {/* タイムライン */}
               <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary-200"></div>
@@ -142,7 +142,7 @@ export function GrowthSection() {
                 ))}
               </div>
             </div>
-            <p className="text-center mt-8 text-gray-600">
+            <p className="text-center mt-8 text-white">
               ※ 入社最短2年でリーダー昇進の実例もあります
             </p>
           </motion.div>

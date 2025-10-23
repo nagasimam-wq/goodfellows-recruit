@@ -65,7 +65,7 @@ export function ImageCarouselSection() {
               {duplicatedImages.map((image, index) => (
                 <motion.div
                   key={index}
-                  className="relative flex-shrink-0 w-[400px] h-[300px] md:w-[500px] md:h-[350px] rounded-xl overflow-hidden shadow-lg"
+                  className="relative flex-shrink-0 w-[400px] h-[300px] md:w-[500px] md:h-[350px] overflow-hidden shadow-lg"
                   whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.3 }
