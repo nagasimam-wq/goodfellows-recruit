@@ -55,7 +55,7 @@ export function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* パタパタ画像スライダー */}
-            <div className="relative h-[500px] md:h-[600px] bg-white overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] sm:h-[500px] md:h-[600px] bg-white overflow-hidden shadow-2xl">
               {sliderImages.map((img, i) => (
                 <motion.div
                   key={i}
@@ -101,9 +101,9 @@ export function HeroSection() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="bg-white/90 backdrop-blur-sm p-8 rounded-lg"
+                  className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-lg"
                 >
-                  <p className="text-3xl md:text-4xl font-bold text-gray-800">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
                     No Re-new, No Future
                   </p>
                 </motion.div>

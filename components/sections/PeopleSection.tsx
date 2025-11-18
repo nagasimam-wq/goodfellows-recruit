@@ -212,7 +212,7 @@ export function PeopleSection() {
                 className="bg-white shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all"
               >
                 {/* 社員画像 */}
-                <div className="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+                <div className="aspect-[8/3] relative bg-gray-200 overflow-hidden">
                   <Image
                     src={interview.image}
                     alt={interview.name}

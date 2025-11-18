@@ -9,14 +9,14 @@ const categories = [
     title: '新卒採用',
     description: '未来を創る仲間を募集',
     color: 'from-[#FF8C00] to-[#FFB900]',
-    href: '#recruit',
+    href: 'https://hrmos.co/pages/goodfellows/jobs',
   },
   {
     icon: Briefcase,
     title: '中途採用',
     description: '即戦力として活躍できる方を募集',
     color: 'from-[#3DADE8] to-[#3DD9A7]',
-    href: '#recruit',
+    href: 'https://hrmos.co/pages/goodfellows/jobs',
   },
 ]
 
@@ -29,6 +29,8 @@ export function JobCategoriesSection() {
             <motion.a
               key={index}
               href={category.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -43,8 +43,7 @@ export function CEOMessageSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full"
-            style={{ minHeight: '600px' }}
+            className="relative w-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]"
           >
             {/* 背景画像 */}
             <div className="absolute inset-0 overflow-hidden">
@@ -59,7 +58,7 @@ export function CEOMessageSection() {
             </div>
 
             {/* コンテンツ */}
-            <div className="relative z-10 flex flex-col md:flex-row gap-12 md:gap-16 items-stretch min-h-[600px]">
+            <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-16 items-stretch min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
               {/* 左側：名前エリア */}
               <div className="md:w-1/2 flex items-end pb-12 pl-6">
                 <div>

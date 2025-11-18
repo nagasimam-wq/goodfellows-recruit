@@ -56,7 +56,7 @@ export function RecruitSection() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex-1"
                   >
-                    <div className="bg-white p-4 rounded-xl shadow-lg h-28 flex flex-col justify-between">
+                    <div className="bg-white p-4 rounded-xl shadow-lg min-h-28 flex flex-col justify-between">
                       <div className="flex items-center gap-2 mb-1">
                         <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
                           {item.step}
@@ -92,7 +92,7 @@ export function RecruitSection() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex-1"
                   >
-                    <div className="bg-white p-4 rounded-xl shadow-lg h-28 flex flex-col justify-between">
+                    <div className="bg-white p-4 rounded-xl shadow-lg min-h-28 flex flex-col justify-between">
                       <div className="flex items-center gap-2 mb-1">
                         <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
                           {item.step}
@@ -146,7 +146,9 @@ export function RecruitSection() {
 
             <div className="mt-12 text-center">
               <motion.a
-                href="mailto:recruit@goodfellows.co.jp"
+                href="https://hrmos.co/pages/goodfellows/jobs"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#FF8C00] rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg"

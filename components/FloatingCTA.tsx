@@ -12,7 +12,9 @@ export function FloatingCTA() {
       className="fixed bottom-6 right-6 z-50 flex flex-col gap-3"
     >
       <motion.a
-        href="#recruit"
+        href="https://hrmos.co/pages/goodfellows/jobs"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A5F] to-[#E63946] text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all font-medium"

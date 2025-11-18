@@ -26,11 +26,11 @@ const careerPath = [
 export function GrowthSection() {
   return (
     <section id="growth" className="relative section-divider overflow-hidden">
-      {/* 固定背景画像（パララックス効果） */}
+      {/* 固定背景画像（パララックス効果） - モバイルではスクロール */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
         style={{
-          backgroundImage: 'url(https://www.goodfellows.co.jp/wp-content/uploads/2020/10/company-img04-1.png)',
+          backgroundImage: 'url(https://www.goodfellows.co.jp/wp-content/uploads/2020/10/company-img04.png)',
         }}
       />
 
