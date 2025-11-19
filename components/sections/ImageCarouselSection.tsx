@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 const images = [
   { src: '/images/recruit-img19.png', alt: 'オフィス風景 1' },
@@ -15,6 +16,61 @@ const images = [
 export function ImageCarouselSection() {
   // 画像を2回複製して無限ループを実現
   const duplicatedImages = [...images, ...images]
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // スマホ用のアニメーション設定
+  const mobileAnimation = {
+    x: Array.from({ length: images.length + 1 }, (_, i) => `-${(i / images.length) * 100}%`),
+  }
+
+  const mobileTransition = {
+    x: {
+      repeat: Infinity,
+      repeatType: "loop" as const,
+      duration: images.length * 3.5, // 各画像3.5秒
+      ease: "easeInOut",
+      times: Array.from({ length: images.length + 1 }, (_, i) => i / images.length),
+    },
+  }
+
+  // デスクトップ用のアニメーション設定
+  const desktopAnimation = {
+    x: [
+      '0%',
+      '0%',
+      '-16.666%',
+      '-16.666%',
+      '-33.333%',
+      '-33.333%',
+      '-50%',
+      '-50%',
+      '-66.666%',
+      '-66.666%',
+      '-83.333%',
+      '-83.333%',
+      '-100%',
+    ],
+  }
+
+  const desktopTransition = {
+    x: {
+      repeat: Infinity,
+      repeatType: "loop" as const,
+      duration: 28,
+      ease: "easeInOut",
+      times: [0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.50, 0.58, 0.67, 0.75, 0.83, 0.92, 1],
+    },
+  }
 
   return (
     <section className="py-20 bg-gradient-to-b from-orange-50 to-white overflow-hidden">
@@ -35,37 +91,13 @@ export function ImageCarouselSection() {
           <div className="overflow-hidden">
             <motion.div
               className="flex gap-6"
-              animate={{
-                x: [
-                  '0%',
-                  '0%',
-                  '-16.666%',
-                  '-16.666%',
-                  '-33.333%',
-                  '-33.333%',
-                  '-50%',
-                  '-50%',
-                  '-66.666%',
-                  '-66.666%',
-                  '-83.333%',
-                  '-83.333%',
-                  '-100%',
-                ],
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 28, // 28秒で1周（少し早く）
-                  ease: "easeInOut",
-                  times: [0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.50, 0.58, 0.67, 0.75, 0.83, 0.92, 1],
-                },
-              }}
+              animate={isMobile ? mobileAnimation : desktopAnimation}
+              transition={isMobile ? mobileTransition : desktopTransition}
             >
               {duplicatedImages.map((image, index) => (
                 <motion.div
                   key={index}
-                  className="relative flex-shrink-0 w-[400px] h-[300px] md:w-[500px] md:h-[350px] overflow-hidden shadow-lg"
+                  className="relative flex-shrink-0 w-[80vw] sm:w-[400px] md:w-[500px] aspect-[4/3] overflow-hidden shadow-lg"
                   whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.3 }

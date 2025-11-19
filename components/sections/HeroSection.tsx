@@ -55,7 +55,7 @@ export function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* パタパタ画像スライダー */}
-            <div className="relative h-[400px] sm:h-[500px] md:h-[600px] bg-white overflow-hidden shadow-2xl">
+            <div className="relative w-full aspect-[16/9] bg-white overflow-hidden shadow-2xl">
               {sliderImages.map((img, i) => (
                 <motion.div
                   key={i}
@@ -86,8 +86,9 @@ export function HeroSection() {
                         className="w-full h-full"
                         style={{
                           backgroundImage: `url(${img})`,
-                          backgroundSize: '400% auto',
+                          backgroundSize: '400% 100%',
                           backgroundPosition: `${c * 33.33}% center`,
+                          backgroundRepeat: 'no-repeat',
                         }}
                       />
                     </motion.div>

@@ -26,35 +26,40 @@ export function JobCategoriesSection() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {categories.map((category, index) => (
-            <motion.a
+            <motion.div
               key={index}
-              href={category.href}
-              target="_blank"
-              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -4 }}
-              className="block"
+              className="group"
             >
-              <div className={`bg-gradient-to-br ${category.color} rounded-xl transition-all p-6 md:p-8 text-center h-full hover:shadow-xl`}>
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-white/90 text-sm md:text-base mb-4">
-                  {category.description}
-                </p>
-                <div>
-                  <span className="inline-flex items-center gap-1 text-white font-semibold text-sm">
-                    詳しく見る
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
+              <a
+                href={category.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className={`relative bg-gradient-to-br ${category.color} rounded-xl transition-all p-4 md:p-6 text-center hover:shadow-xl overflow-hidden`}>
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                  <h3 className="relative z-10 text-xl md:text-2xl font-bold text-white mb-1">
+                    {category.title}
+                  </h3>
+                  <p className="relative z-10 text-white/90 text-sm md:text-base mb-3">
+                    {category.description}
+                  </p>
+                  <div className="relative z-10">
+                    <span className="inline-flex items-center gap-1 text-white font-semibold text-sm">
+                      詳しく見る
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </motion.a>
+              </a>
+            </motion.div>
           ))}
         </div>
       </div>

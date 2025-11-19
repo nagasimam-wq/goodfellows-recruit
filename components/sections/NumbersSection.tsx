@@ -232,19 +232,19 @@ export function NumbersSection() {
             </motion.h3>
 
             {/* 基本情報カード */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-primary-50 to-orange-50 p-6 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-primary-50 to-orange-50 p-4 md:p-6 rounded-2xl shadow-lg"
               >
-                <Calendar className="w-12 h-12 text-primary-500 mb-3" />
-                <div className="text-sm text-gray-600 mb-1">創業年数</div>
-                <div className="text-4xl font-bold text-primary-500">
+                <Calendar className="w-8 md:w-12 h-8 md:h-12 text-primary-500 mb-2 md:mb-3" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1">創業年数</div>
+                <div className="text-2xl md:text-4xl font-bold text-primary-500">
                   <AnimatedNumber end={16} />
-                  <span className="text-2xl">年</span>
+                  <span className="text-lg md:text-2xl">年</span>
                 </div>
               </motion.div>
 
@@ -253,13 +253,13 @@ export function NumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-br from-accent-yellow/20 to-accent-orange/20 p-6 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-accent-yellow/20 to-accent-orange/20 p-4 md:p-6 rounded-2xl shadow-lg"
               >
-                <UsersIcon className="w-12 h-12 text-accent-yellow mb-3" />
-                <div className="text-sm text-gray-600 mb-1">従業員数</div>
-                <div className="text-4xl font-bold text-accent-yellow">
+                <UsersIcon className="w-8 md:w-12 h-8 md:h-12 text-accent-yellow mb-2 md:mb-3" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1">従業員数</div>
+                <div className="text-2xl md:text-4xl font-bold text-accent-yellow">
                   <AnimatedNumber end={37} />
-                  <span className="text-2xl">人</span>
+                  <span className="text-lg md:text-2xl">人</span>
                 </div>
               </motion.div>
 
@@ -268,13 +268,13 @@ export function NumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="bg-gradient-to-br from-accent-blue/20 to-accent-green/20 p-6 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-accent-blue/20 to-accent-green/20 p-4 md:p-6 rounded-2xl shadow-lg"
               >
-                <TrendingUp className="w-12 h-12 text-accent-blue mb-3" />
-                <div className="text-sm text-gray-600 mb-1">平均勤続年数</div>
-                <div className="text-4xl font-bold text-accent-blue">
+                <TrendingUp className="w-8 md:w-12 h-8 md:h-12 text-accent-blue mb-2 md:mb-3" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1">平均勤続年数</div>
+                <div className="text-2xl md:text-4xl font-bold text-accent-blue">
                   <AnimatedNumber end={6} />
-                  <span className="text-2xl">年</span>
+                  <span className="text-lg md:text-2xl">年</span>
                 </div>
               </motion.div>
 
@@ -283,11 +283,11 @@ export function NumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="bg-gradient-to-br from-accent-green/20 to-accent-blue/20 p-6 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-accent-green/20 to-accent-blue/20 p-4 md:p-6 rounded-2xl shadow-lg"
               >
-                <Briefcase className="w-12 h-12 text-accent-green mb-3" />
-                <div className="text-sm text-gray-600 mb-1">雇用形態</div>
-                <div className="text-sm text-gray-700 leading-relaxed">
+                <Briefcase className="w-8 md:w-12 h-8 md:h-12 text-accent-green mb-2 md:mb-3" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1">雇用形態</div>
+                <div className="text-xs md:text-sm text-gray-700 leading-relaxed">
                   正社員 27名<br />
                   役員 2名<br />
                   パート 7名<br />
@@ -353,20 +353,20 @@ export function NumbersSection() {
               <span className="text-xl text-gray-600">働く環境</span>
             </motion.h3>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-accent-blue/20 to-white p-8 rounded-2xl shadow-lg text-center"
+                className="bg-gradient-to-br from-accent-blue/20 to-white p-4 md:p-8 rounded-2xl shadow-lg text-center"
               >
-                <Clock className="w-16 h-16 text-accent-blue mx-auto mb-4" />
-                <div className="text-sm text-gray-600 mb-2">平均残業時間</div>
-                <div className="text-5xl font-bold text-accent-blue mb-2">
+                <Clock className="w-12 md:w-16 h-12 md:h-16 text-accent-blue mx-auto mb-2 md:mb-4" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">平均残業時間</div>
+                <div className="text-3xl md:text-5xl font-bold text-accent-blue mb-1 md:mb-2">
                   <AnimatedNumber end={10} />
                 </div>
-                <div className="text-gray-600">時間／月</div>
+                <div className="text-xs md:text-base text-gray-600">時間／月</div>
               </motion.div>
 
               <motion.div
@@ -374,13 +374,13 @@ export function NumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-br from-accent-green/20 to-white p-8 rounded-2xl shadow-lg text-center"
+                className="bg-gradient-to-br from-accent-green/20 to-white p-4 md:p-8 rounded-2xl shadow-lg text-center"
               >
-                <Calendar className="w-16 h-16 text-accent-green mx-auto mb-4" />
-                <div className="text-sm text-gray-600 mb-2">有給休暇取得率</div>
-                <div className="text-5xl font-bold text-accent-green mb-2">
+                <Calendar className="w-12 md:w-16 h-12 md:h-16 text-accent-green mx-auto mb-2 md:mb-4" />
+                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">有給休暇取得率</div>
+                <div className="text-3xl md:text-5xl font-bold text-accent-green mb-1 md:mb-2">
                   <AnimatedNumber end={85} />
-                  <span className="text-3xl">%</span>
+                  <span className="text-2xl md:text-3xl">%</span>
                 </div>
               </motion.div>
 
@@ -389,11 +389,11 @@ export function NumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-primary-50 to-white p-4 md:p-8 rounded-2xl shadow-lg col-span-2 md:col-span-1"
               >
-                <UsersIcon className="w-16 h-16 text-primary-500 mx-auto mb-4" />
-                <div className="text-sm text-gray-600 mb-3 text-center">働き方</div>
-                <div className="space-y-2 text-sm text-gray-700">
+                <UsersIcon className="w-12 md:w-16 h-12 md:h-16 text-primary-500 mx-auto mb-2 md:mb-4" />
+                <div className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 text-center">働き方</div>
+                <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-700">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                     <span>週2出社</span>

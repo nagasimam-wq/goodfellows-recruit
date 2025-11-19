@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, ChevronRight } from 'lucide-react'
+import { Mail, Phone, ChevronRight, ChevronDown } from 'lucide-react'
 
 const newGradFlow = [
   { step: 1, title: 'エントリー', description: '応募フォームからエントリー' },
@@ -46,30 +46,39 @@ export function RecruitSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-3xl font-bold mb-8 text-center">新卒採用フロー</h3>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-4">
               {newGradFlow.map((item, index) => (
-                <div key={index} className="flex items-center gap-4 flex-1">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex-1"
-                  >
-                    <div className="bg-white p-4 rounded-xl shadow-lg min-h-28 flex flex-col justify-between">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
-                          {item.step}
-                        </div>
-                        <h4 className="font-bold text-base leading-tight">{item.title}</h4>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative"
+                >
+                  <div className="bg-white p-3 md:p-4 rounded-xl shadow-lg min-h-24 md:min-h-28 flex flex-col justify-between">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-6 h-6 md:w-7 md:h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-xs md:text-sm">
+                        {item.step}
                       </div>
-                      <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
+                      <h4 className="font-bold text-sm md:text-base leading-tight">{item.title}</h4>
                     </div>
-                  </motion.div>
+                    <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
+                  </div>
+                  {/* 矢印アイコン（最後以外） */}
                   {index < newGradFlow.length - 1 && (
-                    <ChevronRight className="hidden md:block text-primary-400 flex-shrink-0" size={24} />
+                    <>
+                      {/* スマホ: 下向き矢印 */}
+                      <ChevronDown className="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-2 text-primary-400 z-10" size={20} />
+                      {/* タブレット: 右向き矢印（奇数インデックスのみ、2列レイアウトの左側） */}
+                      {index % 2 === 0 && (
+                        <ChevronRight className="hidden sm:block lg:hidden absolute -right-2 top-1/2 -translate-y-1/2 text-primary-400 z-10" size={20} />
+                      )}
+                      {/* デスクトップ: 右向き矢印（全て） */}
+                      <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-primary-400 z-10" size={20} />
+                    </>
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -82,30 +91,39 @@ export function RecruitSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-3xl font-bold mb-8 text-center">中途採用フロー</h3>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-4">
               {careerFlow.map((item, index) => (
-                <div key={index} className="flex items-center gap-4 flex-1">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex-1"
-                  >
-                    <div className="bg-white p-4 rounded-xl shadow-lg min-h-28 flex flex-col justify-between">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm">
-                          {item.step}
-                        </div>
-                        <h4 className="font-bold text-base leading-tight">{item.title}</h4>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative"
+                >
+                  <div className="bg-white p-3 md:p-4 rounded-xl shadow-lg min-h-24 md:min-h-28 flex flex-col justify-between">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-6 h-6 md:w-7 md:h-7 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-xs md:text-sm">
+                        {item.step}
                       </div>
-                      <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
+                      <h4 className="font-bold text-sm md:text-base leading-tight">{item.title}</h4>
                     </div>
-                  </motion.div>
+                    <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
+                  </div>
+                  {/* 矢印アイコン（最後以外） */}
                   {index < careerFlow.length - 1 && (
-                    <ChevronRight className="hidden md:block text-primary-400 flex-shrink-0" size={24} />
+                    <>
+                      {/* スマホ: 下向き矢印 */}
+                      <ChevronDown className="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-2 text-primary-400 z-10" size={20} />
+                      {/* タブレット: 右向き矢印（奇数インデックスのみ、2列レイアウトの左側） */}
+                      {index % 2 === 0 && (
+                        <ChevronRight className="hidden sm:block lg:hidden absolute -right-2 top-1/2 -translate-y-1/2 text-primary-400 z-10" size={20} />
+                      )}
+                      {/* デスクトップ: 右向き矢印（全て） */}
+                      <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-primary-400 z-10" size={20} />
+                    </>
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -151,10 +169,11 @@ export function RecruitSection() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#FF8C00] rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg"
+                className="relative inline-flex items-center gap-2 px-8 py-4 bg-white text-[#FF8C00] rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg overflow-hidden group"
               >
-                <Mail size={20} />
-                今すぐエントリーする
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-[#FF8C00]/20 to-transparent"></div>
+                <Mail size={20} className="relative z-10" />
+                <span className="relative z-10">今すぐエントリーする</span>
               </motion.a>
             </div>
           </motion.div>

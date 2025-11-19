@@ -30,7 +30,7 @@ export function GrowthSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
         style={{
-          backgroundImage: 'url(https://www.goodfellows.co.jp/wp-content/uploads/2020/10/company-img04.png)',
+          backgroundImage: 'url(/images/natural-clouds-forest.jpg)',
         }}
       />
 
