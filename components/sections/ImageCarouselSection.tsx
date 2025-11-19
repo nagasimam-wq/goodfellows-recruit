@@ -38,7 +38,7 @@ export function ImageCarouselSection() {
       repeat: Infinity,
       repeatType: "loop" as const,
       duration: images.length * 3.5, // 各画像3.5秒
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
       times: Array.from({ length: images.length + 1 }, (_, i) => i / images.length),
     },
   }
@@ -67,7 +67,7 @@ export function ImageCarouselSection() {
       repeat: Infinity,
       repeatType: "loop" as const,
       duration: 28,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
       times: [0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.50, 0.58, 0.67, 0.75, 0.83, 0.92, 1],
     },
   }
